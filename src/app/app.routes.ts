@@ -6,11 +6,13 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 
 export const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},    
     { path: 'home', component: HomeComponent},
     { path: 'sobre', component: SobreComponent},
+    { path: 'filmes', component: FilmesComponent },
     { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard] },
     { path: 'produtos', 
             loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
